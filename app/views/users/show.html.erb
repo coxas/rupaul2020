@@ -1,0 +1,16 @@
+<div class="row dark_background center">
+  <h2 class="center">Your Donation History</h2>
+  
+<% if @histories.length == 0 %>
+    <h4 class="center">You have no donation history. <%= link_to 'Donate', "/donations/new" %> today!</h4>
+ <% else %>
+    <% @histories.each do |h| %>
+        <h4><span class="underline"><%="Donation \##{h.id}" %></span></h4>
+        <p class="top_padding">Donation amount: $<%= h.amount %></p>
+        <p>Donated by: <%= h.user.name %></p>
+        <p class="skinny">Message: "<%= h.message %>" </p>
+        <a href="/donations/edit">Edit this message</a>
+
+  <% end %>
+<% end %>
+</div>

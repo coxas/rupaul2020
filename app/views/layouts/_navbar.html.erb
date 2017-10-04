@@ -1,0 +1,17 @@
+    <nav class="navbar-default">
+
+        <ul class="josefin">
+            <% if session["user_id"].present? %>
+                <% user = User.find_by_id(session["user_id"]) %>
+                <li>Welcome, <%= user.name %> </li>
+                <li><%= link_to 'Home', "/" %> </li>   
+                <li><%= link_to 'Your Donation History', "/histories" %></li>
+                <li><%=link_to "Sign Out", "/logout", method: :delete %></li>
+            <% else %>
+                <li><%= link_to 'Home', "/" %> </li>   
+                <li><%= link_to "Sign Up", "/users/new" %></li>
+                <li><%= link_to "Sign In", "/sessions/new" %></li>
+            <% end %>
+            <li id="donate"><%= link_to 'DONATE', "/donations/new" %> </li>
+        </ul>
+    </nav>

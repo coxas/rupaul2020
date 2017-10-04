@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RuPaul for Senate 2020</title>
+    <%= csrf_meta_tags %>
+    <!-- Bootstrap for defaults -->
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'%>
+    <!-- Google Font -->
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans' %>
+    <!-- Custrom CSS -->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+  <body>
+    <div id="imagewrap">
+      <a href="/help"><input type="button" class="button" value="User Stories"/></a>
+
+      <img src="/../assets/rupaul_senate.png" width="100%">
+    </div>
+
+    <%= render 'layouts/navbar' %>
+
+    <div class="dark_background" class="container">
+      <div id="notice">
+        <%= notice %>
+      </div>
+        <%= yield %>
+    </div>
+  </body>
+  <footer>
+    <p id="copyright">&copy; Alyssa Cox 2017</p>
+  </footer>
+</html>
