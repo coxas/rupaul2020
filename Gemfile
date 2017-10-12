@@ -19,8 +19,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'pg'
+
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'

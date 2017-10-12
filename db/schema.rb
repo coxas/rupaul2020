@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "donations", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "amount"
     t.text "message"
     t.string "card_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "user_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
